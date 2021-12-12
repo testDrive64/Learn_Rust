@@ -1,1 +1,1 @@
-/Users/norman/Documents/Projects/Rust/Tutorial/hello-rust/target/debug/hello-rust: /Users/norman/Documents/Projects/Rust/Tutorial/hello-rust/src/main.rs
+/Users/norman/Documents/Projects/Rust/Learn_Rust/hello-rust/target/debug/hello-rust: /Users/norman/Documents/Projects/Rust/Learn_Rust/hello-rust/src/main.rs
