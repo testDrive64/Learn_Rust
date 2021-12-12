@@ -1,1 +1,1 @@
-/Users/norman/Documents/Projects/Rust/Tutorial/grrs/target/debug/grrs: /Users/norman/Documents/Projects/Rust/Tutorial/grrs/src/main.rs
+/Users/norman/Documents/Projects/Rust/Learn_Rust/grrs/target/debug/grrs: /Users/norman/Documents/Projects/Rust/Learn_Rust/grrs/src/main.rs

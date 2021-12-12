@@ -1,4 +1,5 @@
 use structopt::StructOpt;
+use anyhow::{Context, Result};
 
 #[derive(StructOpt)]
 struct Cli {
@@ -7,20 +8,22 @@ struct Cli {
     path: std::path::PathBuf,
 }
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-
+fn main() -> Result<()> {
     let args = Cli::from_args();
-    let result = std::fs::read_to_string(&args.path);
-    let content = match result {
-        Ok(content) => { content }
-        Err(error) => { return Err(error.into()); }
-    };
-    println!("file content: {}", content);
+    let content = std::fs::read_to_string(&args.path)
+        .with_context(|| format!("could not read file `{}`", args.path.display()))?;
+    find_matches(&content, &args.pattern, &mut std::io::stdout());
+
     Ok(())
+}
+
+
+fn find_matches(content: &str, pattern: &str, mut writer: impl std::io::Write) {
     for line in content.lines() {
-        if line.contains(&args.pattern) {
-            println!("{}", line);
+        if line.contains(pattern) {
+            writeln!(writer, "{}", line);
         }
     }
 }
+
 
