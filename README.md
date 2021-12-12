@@ -2,4 +2,4 @@
 
 ## Repository Content
 
-- This repository contains several tutorial projects I started.
+This repository contains several tutorial projects I started.
